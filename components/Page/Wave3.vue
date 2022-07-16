@@ -1,10 +1,11 @@
 <script lang="ts" setup>
-const { getLocaleMessage } = useLang()
-const translations = getLocaleMessage('bg').wave3.bullets
+const { t, te } = useLang()
 
 const bullets = []
-for (const key in translations)
-	bullets.push(translations[key].source)
+for (const key of [0, 1, 2, 3, 4, 5, 6, 7, 8]) {
+	if (te('wave3.bullets.' + key))
+		bullets.push(t('wave3.bullets.' + key))
+}
 
 </script>
 
