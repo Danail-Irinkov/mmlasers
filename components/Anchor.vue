@@ -1,18 +1,18 @@
 <script lang="ts" setup>
 // micro compiler
 const props = defineProps({
-  text: {
-    type: String,
-    default: '',
-  },
-  to: {
-    type: [String, Object],
-    default: undefined,
-  },
-  href: {
-    type: String,
-    default: '',
-  },
+	text: {
+		type: String,
+		default: '',
+	},
+	to: {
+		type: [String, Object],
+		default: undefined,
+	},
+	href: {
+		type: String,
+		default: '',
+	},
 })
 
 // state
@@ -25,15 +25,13 @@ const to = toRef(props, 'to')
     v-if="to"
     tag="a"
     :to="to"
-    :class="`transition-colors duration-300 dark:hover:text-white hover:text-gray-900 hover:underline`"
-  >
+    :class="`transition-colors duration-300 dark:hover:text-white hover:text-gray-900 hover:underline`">
     <slot>{{ text }}</slot>
   </NuxtLink>
   <a
     v-else
     :class="`transition-colors duration-300 dark:hover:text-white hover:text-gray-900 hover:underline`"
-    :href="href"
-  >
+    :href="href">
     <slot>{{ text }}</slot>
   </a>
 </template>

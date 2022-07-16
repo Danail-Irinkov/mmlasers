@@ -6,16 +6,16 @@ const { t } = useLang()
 
 // compiler macro
 definePageMeta({
-  layout: 'page',
+	layout: 'page',
 })
 useHead(() => ({
-  title: capitalize(t('pages.about.title')),
-  meta: [
-    {
-      name: 'description',
-      content: t('pages.about.description'),
-    },
-  ],
+	title: capitalize(t('pages.about.title')),
+	meta: [
+		{
+			name: 'description',
+			content: t('pages.about.description'),
+		},
+	],
 }))
 </script>
 
@@ -31,15 +31,13 @@ useHead(() => ({
           class="inline-block rounded-full"
           alt="viandwi24"
           width="100"
-          height="100"
-        />
+          height="100">
         <Button
           size="xs"
           type="opposite"
           text="Alfian Dwi Nugraha (@viandwi24)"
           class="font-extrabold mt-4"
-          href="https://github.com/viandwi24"
-        />
+          href="https://github.com/viandwi24" />
       </div>
     </PageBody>
   </PageWrapper>

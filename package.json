@@ -11,7 +11,9 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "host": "yarn generate && yarn deploy",
     "generate": "nuxt generate",
+    "deploy": "firebase deploy --only hosting:mmlasers",
     "preview": "nuxt preview",
     "start": "node .output/server/index.mjs",
     "serve": "serve dist/",
@@ -56,8 +58,12 @@
     "unplugin-vue-components": "0.21.0"
   },
   "lint-staged": {
-    "**/*.{js,ts,vue,html,css,scss}": [
+    "**/*.{js,ts,vue,html}": [
       "yarn lintfix"
     ]
+  },
+  "dependencies": {
+    "firebase": "^9.9.0",
+    "vue3-google-map": "^0.13.2"
   }
 }

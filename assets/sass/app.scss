@@ -60,3 +60,16 @@ html.dark {
   transform: translateY(-20px);
   opacity: 0;
 }
+
+.reading-width {
+	max-width: 66ch;
+}
+
+.link {
+	cursor: pointer;
+	text-decoration: underline;
+	color: rgba(35, 65, 255, 0.95);
+	&:hover {
+		opacity: 0.75;
+	}
+}

@@ -1,25 +1,25 @@
 <script lang="ts" setup>
 const props = defineProps({
-  text: {
-    type: String,
-    default: '',
-  },
-  type: {
-    type: String,
-    default: 'primary',
-  },
-  size: {
-    type: String,
-    default: 'md',
-  },
-  to: {
-    type: [String, Object],
-    default: undefined,
-  },
-  href: {
-    type: String,
-    default: undefined,
-  },
+	text: {
+		type: String,
+		default: '',
+	},
+	type: {
+		type: String,
+		default: 'primary',
+	},
+	size: {
+		type: String,
+		default: 'md',
+	},
+	to: {
+		type: [String, Object],
+		default: undefined,
+	},
+	href: {
+		type: String,
+		default: undefined,
+	},
 })
 
 // state:styles
@@ -32,20 +32,20 @@ const defaultStyle = `
 const styles = reactive<{
   [key: string]: string
 }>({
-  none: '',
-  primary: 'text-white bg-primary-500 hover:bg-primary-400 border-primary-500',
-  secondary:
+	none: '',
+	primary: 'text-white bg-primary-500 hover:bg-primary-400 border-primary-500',
+	secondary:
     'text-slate-800 bg-gray-200 border-gray-200 hover:bg-gray-300 dark:text-white dark:border-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700',
-  opposite:
+	opposite:
     'text-white bg-gray-800 hover:bg-white hover:text-gray-800 hover:border-gray-900 dark:text-gray-800 dark:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-100 dark:border-white',
 })
 const sizes = reactive<{
   [key: string]: string
 }>({
-  lg: 'h-13 px-8 text-lg rounded-lg',
-  md: 'h-10 px-6 text-base rounded',
-  sm: 'h-9 px-4 text-sm rounded',
-  xs: 'h-6 px-3 text-xs rounded',
+	lg: 'h-13 px-8 text-lg rounded-lg',
+	md: 'h-10 px-6 text-base rounded',
+	sm: 'h-9 px-4 text-sm rounded',
+	xs: 'h-6 px-3 text-xs rounded',
 })
 
 // state
@@ -54,13 +54,12 @@ const selectedSize = computed(() => sizes[props.size] || sizes.lg)
 
 // methods
 const onClick = (event: MouseEvent) => {
-  const router = useRouter()
-  if (props.to) {
-    router.push(props.to)
-  }
-  if (!props.href) {
-    event.preventDefault()
-  }
+	const router = useRouter()
+	if (props.to)
+		router.push(props.to)
+
+	if (!props.href)
+		event.preventDefault()
 }
 </script>
 
@@ -69,16 +68,14 @@ const onClick = (event: MouseEvent) => {
     v-if="to"
     tag="a"
     :to="to"
-    :class="`${defaultStyle} ${selectedStyle} ${selectedSize}`"
-  >
+    :class="`${defaultStyle} ${selectedStyle} ${selectedSize}`">
     <slot>{{ text }}</slot>
   </NuxtLink>
   <a
     v-else
     :class="`${defaultStyle} ${selectedStyle} ${selectedSize}`"
     :href="href"
-    @click="onClick"
-  >
+    @click="onClick">
     <slot>{{ text }}</slot>
   </a>
 </template>

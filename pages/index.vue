@@ -1,77 +1,45 @@
 <script lang="ts" setup>
+// // Import the functions you need from the SDKs you need
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
+//
+// // Your web app's Firebase configuration
+// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+// 	apiKey: "AIzaSyCkmpWvNx2dXRpsbL3L8lr0FERU8DttroQ",
+// 	authDomain: "mmlasers-7842c.firebaseapp.com",
+// 	projectId: "mmlasers-7842c",
+// 	storageBucket: "mmlasers-7842c.appspot.com",
+// 	messagingSenderId: "251359442085",
+// 	appId: "1:251359442085:web:9ab4edf42f08ad2aea094c",
+// 	measurementId: "G-1CPVXE0VDN"
+// };
+//
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+
 // composable
 const { t } = useLang()
 
 // meta
 definePageMeta({
-  layout: 'page',
+	layout: 'page',
 })
 
-// vars
-const titlesText = computed<string[]>(() => t('pages.index.title').split('[]'))
-const leadingsText = computed(() => [
-  {
-    text: titlesText.value[0],
-    startColor: '#007CF0',
-    endColor: '#00DFD8',
-    delay: 0,
-  },
-  {
-    text: titlesText.value[1],
-    startColor: '#7928CA',
-    endColor: '#FF0080',
-    delay: 2,
-  },
-  {
-    text: titlesText.value[2],
-    startColor: '#FF4D4D',
-    endColor: '#F9CB28',
-    delay: 4,
-  },
-])
 </script>
 
 <template>
-  <PageWrapper class="flex justify-center items-center">
-    <div class="background-overlay">
-      <div
-        class="absolute top-0 left-0 transform translate-x-64 translate-y-4 h-14 w-14 rounded-full bg-gray-900 dark:bg-white"
-      ></div>
-      <div
-        class="absolute hidden md:block top-0 left-0 transform translate-x-18 translate-y-20 h-28 w-28 rounded-full bg-blue-600 linear-wipe"
-      ></div>
-      <div
-        class="absolute hidden md:block bottom-0 right-0 transform -translate-x-4 -translate-y-40 h-16 w-16 rounded bg-purple-600 linear-wipe"
-      ></div>
-      <div class="absolute bottom-0 right-0 triangle-shape"></div>
-    </div>
-    <div class="flex flex-col z-10">
-      <h1 class="text-center">
-        <span
-          v-for="(item, i) in leadingsText"
-          :key="i"
-          :style="`--content: '${item.text}'; --start-color: ${item.startColor}; --end-color: ${item.endColor}; --delay: ${item.delay}s`"
-          class="animated-text-bg drop-shadow-xl text-5xl xl:text-8xl 2xl:text-9xl block font-black uppercase"
-        >
-          <span class="animated-text-fg">{{ item.text }}</span>
-        </span>
-      </h1>
-      <div class="flex space-x-4 justify-center mt-10">
-        <Button
-          size="lg"
-          text="Nuxt 3"
-          class="font-extrabold"
-          href="https://v3.nuxtjs.org"
-        />
-        <Button
-          size="lg"
-          text="Github"
-          type="secondary"
-          class="font-extrabold"
-          href="https://github.com/viandwi24/nuxt3-awesome-starter"
-        />
-      </div>
-    </div>
+  <PageWrapper class="flex flex-col justify-center items-center" style="height: fit-content; width: 100%">
+    <PageHero />
+    <PageAbout />
+    <PageWave3 />
+    <PageOffer />
+    <PageWhyUs />
+    <PageLocations />
+    <PageContacts />
   </PageWrapper>
 </template>
 

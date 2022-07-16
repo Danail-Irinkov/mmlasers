@@ -6,25 +6,25 @@ export interface IIdentityState {
 }
 
 export const useIdentity = defineStore('identity', {
-  state: (): IIdentityState => ({
-    firstName: 'Alfian',
-    lastName: 'Dwi',
-  }),
-  actions: {
-    setFirstName(firstName: string) {
-      this.firstName = firstName
-    },
-    setLastName(lastName: string) {
-      this.lastName = lastName
-    },
-    reset() {
-      this.firstName = 'Alfian'
-      this.lastName = 'Dwi'
-    },
-  },
-  getters: {
-    fullName() {
-      return `${this.firstName} ${this.lastName}`
-    },
-  },
+	state: (): IIdentityState => ({
+		firstName: 'Danail',
+		lastName: 'Irinkov',
+	}),
+	actions: {
+		setFirstName(firstName: string) {
+			this.firstName = firstName
+		},
+		setLastName(lastName: string) {
+			this.lastName = lastName
+		},
+		reset() {
+			this.firstName = 'Danail'
+			this.lastName = 'Irinkov'
+		},
+	},
+	getters: {
+		fullName(): String {
+			return `${this.firstName} ${this.lastName}`
+		},
+	},
 })

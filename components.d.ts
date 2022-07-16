@@ -23,8 +23,6 @@ declare module '@vue/runtime-core' {
     IconMdi: githubFace': typeof import('~icons/mdi/github-face')['default']
     'IconMdi:checkCircle': typeof import('~icons/mdi/check-circle')['default']
     'IconMdi:githubFace': typeof import('~icons/mdi/github-face')['default']
-    IconSimpleIcons: nuxtdotjs': typeof import('~icons/simple-icons/nuxtdotjs')['default']
-    'IconSimpleIcons:nuxtdotjs': typeof import('~icons/simple-icons/nuxtdotjs')['default']
     IconUil: times': typeof import('~icons/uil/times')['default']
     'IconUil:angleDown': typeof import('~icons/uil/angle-down')['default']
     'IconUil:apps': typeof import('~icons/uil/apps')['default']
