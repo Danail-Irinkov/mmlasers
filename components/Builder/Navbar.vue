@@ -56,7 +56,7 @@ const toggleOptions = (show?: boolean) => {
               <span class="sr-only">home</span>
               <span class="flex items-center">
                 <img
-                  src="~assets/svg/logo_basic.svg"
+                  src="~assets/svg/logo_color.svg"
                   style="height: 30px; position: relative; top: -5px"
                   class="inline-block mr-2 text-lg">
                 {{ app.name }}

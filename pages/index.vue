@@ -22,6 +22,8 @@
 // const analytics = getAnalytics(app);
 
 // composable
+import Setting from '~/pages/setting.vue';
+
 const { t } = useLang()
 
 // meta
@@ -34,12 +36,7 @@ definePageMeta({
 <template>
   <PageWrapper class="flex flex-col justify-center items-center" style="height: fit-content; width: 100%">
     <PageHero />
-    <PageAbout />
-    <PageWave3 />
-    <PageOffer />
-    <PageWhyUs />
-    <PageLocations />
-    <PageContacts />
+    <img src="~assets/images/underconstruction.jpg">
   </PageWrapper>
 </template>
 

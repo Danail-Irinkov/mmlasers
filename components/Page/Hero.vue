@@ -19,7 +19,7 @@ const leadingsText = computed(() => [
 </script>
 
 <template>
-  <div class="height-fit bg-skin-50" style="width: 100%;height: 75vh; overflow: hidden">
+  <div class="height-fit bg-skin-50 img-overlay-wrap" style="width: 100%;height: 75vh; overflow: hidden">
     <div class="flex flex-col z-10 px-20" style="position: absolute;margin-top: 20vh">
       <h1 class="text-left">
         <span
@@ -39,11 +39,20 @@ const leadingsText = computed(() => [
           href="#wave3" />
       </div>
     </div>
-
-    <img
-      class="justify-center hero-image"
-      src="~assets/images/pretty-face-min.png"
-      alt="pretty-face">
+    <div class="relative">
+      <img
+        class="justify-center hero-image"
+        src="~assets/images/pretty-face-min.png"
+        alt="pretty-face">
+      <div class="face-shape-wrapper">
+        <div class="face-shape">
+          <img
+            class="hex"
+            src="~assets/svg/hexagonal_pattern2.svg">
+          <div class="hex-border" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <style>
@@ -55,4 +64,59 @@ const leadingsText = computed(() => [
 	object-fit: cover;
 	object-position: 34% 0;
 }
+@media all and (max-width: 685px){
+	.face-shape-wrapper {
+		left: 0;
+	}
+}
+@media all and (min-width: 686px){
+	.face-shape-wrapper {
+		right: 0;
+	}
+}
+.face-shape-wrapper {
+	position: absolute;
+	top: 0;
+	height: 100vh;
+	width: 55vw;
+	min-width: 690px;
+	margin-left: auto;
+}
+
+.face-shape {
+	position: absolute;
+	left: 165px;
+	top: 0;
+	display: block;
+	width: 60%;
+	height: 100%;
+	background-color: transparent;
+	border-radius: 65% 77% 39% 44% / 98% 68% 65% 123%;
+	overflow: hidden;
+	background-blend-mode: lighten;
+}
+.hex {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: transform 250ms ease-in-out;
+	opacity: 0.7;
+	width: 156vw;
+	min-width: 1100px;
+	max-width: 300vh;
+	height: auto;
+	min-height: 80vh;
+	max-height: 160vh;
+	z-index: 4;
+}
+.hex-border {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	/*box-shadow: 0 0 23px 26px #f3e5d86b inset;*/
+}
+
 </style>
